@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react"
+import "./App.css"
+import Footer  from "./Components/footer";
+import Navbar from "./Components/navbar";
+import FilterMenu from "./Components/FilterMenu";
+import CategoryCards from "./Components/categorycard";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="bg-gray-100 min-h-screen">
+      {/* Navbar */}
+      <Navbar />
 
-export default App
+      {/* Hero Section */}
+      <header className="bg-white shadow py-6">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-3xl font-bold text-gray-800">Linking tenants to realtors</h1>
+        </div>
+      </header>
+
+      {/* Filter Menu */}
+      <FilterMenu />
+
+      {/* Top Categories */}
+      <section className="py-10 bg-gray-50">
+        <CategoryCards />
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
